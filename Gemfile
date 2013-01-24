@@ -9,6 +9,11 @@ gem 'rails', '3.2.11'
 
 gem 'activerecord-jdbcsqlite3-adapter'
 
+group :deployment do
+  gem 'puma'
+  gem 'activerecord-jdbcpostgresql-adapter'
+end
+
 gem 'jruby-openssl'
 
 # Gems used only for assets and not required
