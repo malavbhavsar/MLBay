@@ -1,9 +1,26 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
-  def index
-    @users = User.all
+  require 'java'
+  import 'weka.classifiers.functions'
+  include_class "java.io.FileReader"
+  include_class "weka.core.Instances"
+  include_class "weka.core.Instance"
+  include_class "weka.core.Attribute"
 
+  def index
+    file = FileReader.new(Rails.root.join('public/autoPrice.arff').to_s)
+    data = Instances.new file
+    data.set_class_index(data.num_attributes() - 1)
+    regress = SimpleLinearRegression.new
+    regress.build_classifier data
+    arr = [2,164,99.8,176.6,66.2,54.3,2337,109,3.19,3.4,10,102,5500,24,30,13950]
+    inst = data.first_instance.copy
+    inst.enumerate_attributes.each_with_index do |attr,i|
+      inst.set_value i,arr[i]
+    end
+    regress.classify_instance inst
+    @users = User.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }

@@ -45,6 +45,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
+    columnize (0.3.6)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -58,6 +59,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jruby-openssl (0.8.2)
       bouncy-castle-java (>= 1.5.0146.1)
+    json (1.7.6)
     json (1.7.6-java)
     mail (2.4.4)
       i18n (>= 0.4.0)
@@ -66,6 +68,8 @@ GEM
     mime-types (1.19)
     multi_json (1.5.0)
     polyglot (0.3.3)
+    puma (1.6.3)
+      rack (~> 1.2)
     puma (1.6.3-java)
       rack (~> 1.2)
     rack (1.4.4)
@@ -93,6 +97,10 @@ GEM
     rake (10.0.3)
     rdoc (3.12)
       json (~> 1.4)
+    ruby-debug (0.10.4)
+      columnize (>= 0.1)
+      ruby-debug-base (~> 0.10.4.0)
+    ruby-debug-base (0.10.4-java)
     sass (3.2.5)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -127,6 +135,7 @@ DEPENDENCIES
   jruby-openssl
   puma
   rails (= 3.2.11)
+  ruby-debug
   sass-rails (~> 3.2.3)
   therubyrhino
   uglifier (>= 1.0.3)
