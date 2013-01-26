@@ -11,19 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130124074631) do
+ActiveRecord::Schema.define(:version => 20130126064606) do
 
-  create_table "books", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "email"
-    t.string   "password"
-    t.string   "api_key"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "algorithms", :force => true do |t|
+    t.string   "name"
+    t.string   "algorithm"
+    t.binary   "data",       :limit => 10485760
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.string   "file"
   end
 
 end

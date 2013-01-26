@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @algorithm.name %>
+</p>
+
+<p>
+  <b>Algorithm:</b>
+  <%= @algorithm.algorithm %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%= @algorithm.data %>
+</p>
+
+
+<%= link_to 'Edit', edit_algorithm_path(@algorithm) %> |
+<%= link_to 'Back', algorithms_path %>
